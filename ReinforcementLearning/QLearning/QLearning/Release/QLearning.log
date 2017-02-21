@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+  QLClass.cpp
+  QLearning.cpp
+QLearning.cpp(55): warning C4244: '引数': 'double' から 'const int' への変換です。データが失われる可能性があります。
+  QLearning.vcxproj -> D:\Documents\Visual Studio 2015\Projects\QLearning\Release\QLearning.lib
