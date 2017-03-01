@@ -1,0 +1,161 @@
+﻿  Main.cpp
+d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(146): warning C4018: '>=': signed と unsigned の数値を比較しようとしました。
+  d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(133): note: クラス テンプレート のメンバー関数 'std::unordered_set<const std::vector<int,std::allocator<_Ty>> *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<_Kty>> LSH::LSHClass<DataType>::query(const std::vector<_Ty,std::allocator<_Ty>> &) const' のコンパイル中
+          with
+          [
+              _Ty=int,
+              _Kty=const std::vector<int,std::allocator<int>> *,
+              DataType=DataType
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(32): note: コンパイル対象の関数 テンプレート インスタンス化 'std::unordered_set<const std::vector<int,std::allocator<_Ty>> *,std::hash<_Kty>,std::equal_to<_Kty>,std::allocator<_Kty>> LSH::LSHClass<DataType>::query(const std::vector<_Ty,std::allocator<_Ty>> &) const' のリファレンスを確認してください
+          with
+          [
+              _Ty=int,
+              _Kty=const std::vector<int,std::allocator<int>> *,
+              DataType=DataType
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(23): note: コンパイル対象のクラス テンプレート インスタンス化 'LSH::LSHClass<DataType>' のリファレンスを確認してください
+          with
+          [
+              DataType=DataType
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\main.cpp(15): note: コンパイル対象のクラス テンプレート インスタンス化 'QLTLClass<S,A,DataType>' のリファレンスを確認してください
+d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(46): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+  d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(39): note: クラス テンプレート のメンバー関数 'LSH::H<T>::H(const int &,const int &)' のコンパイル中
+          with
+          [
+              T=DataType
+          ]
+  d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(71): note: コンパイル対象の関数 テンプレート インスタンス化 'LSH::H<T>::H(const int &,const int &)' のリファレンスを確認してください
+          with
+          [
+              T=DataType
+          ]
+  d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(87): note: コンパイル対象のクラス テンプレート インスタンス化 'LSH::H<T>' のリファレンスを確認してください
+          with
+          [
+              T=DataType
+          ]
+  d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(81): note: クラス テンプレート のメンバー関数 'LSH::lshHash LSH::G<DataType>::operator ()(const std::vector<int,std::allocator<_Ty>> &) const' のコンパイル中
+          with
+          [
+              DataType=DataType,
+              _Ty=int
+          ]
+  d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(138): note: コンパイル対象の関数 テンプレート インスタンス化 'LSH::lshHash LSH::G<DataType>::operator ()(const std::vector<int,std::allocator<_Ty>> &) const' のリファレンスを確認してください
+          with
+          [
+              DataType=DataType,
+              _Ty=int
+          ]
+  c:\program files\microsoft visual studio 14.0\vc\include\vector(1661): note: コンパイル対象のクラス テンプレート インスタンス化 'LSH::G<DataType>' のリファレンスを確認してください
+          with
+          [
+              DataType=DataType
+          ]
+  c:\program files\microsoft visual studio 14.0\vc\include\vector(1655): note: クラス テンプレート のメンバー関数 'void std::vector<LSH::G<DataType>,std::allocator<_Ty>>::_Tidy(void)' のコンパイル中
+          with
+          [
+              DataType=DataType,
+              _Ty=LSH::G<DataType>
+          ]
+  c:\program files\microsoft visual studio 14.0\vc\include\vector(975): note: コンパイル対象の関数 テンプレート インスタンス化 'void std::vector<LSH::G<DataType>,std::allocator<_Ty>>::_Tidy(void)' のリファレンスを確認してください
+          with
+          [
+              DataType=DataType,
+              _Ty=LSH::G<DataType>
+          ]
+  d:\documents\github\nearestneighbor\lsh\lsh\lsh.h(105): note: コンパイル対象のクラス テンプレート インスタンス化 'std::vector<LSH::G<DataType>,std::allocator<_Ty>>' のリファレンスを確認してください
+          with
+          [
+              DataType=DataType,
+              _Ty=LSH::G<DataType>
+          ]
+c:\program files\microsoft visual studio 14.0\vc\include\numeric(20): warning C4244: '引数': 'double' から 'const int' への変換です。データが失われる可能性があります。
+  c:\program files\microsoft visual studio 14.0\vc\include\numeric(30): note: コンパイル対象の関数 テンプレート インスタンス化 '_Ty std::_Accumulate<double*,_Ty,_Fn2>(_InIt,_InIt,_Ty,_Fn2)' のリファレンスを確認してください
+          with
+          [
+              _Ty=int,
+              _Fn2=MathPlus::Distance::Distance::<lambda_8bab08fadfce21dc9cd4ae650a510f86>,
+              _InIt=double *
+          ]
+  d:\documents\github\mylib\librarymaker\mathplus\mathplus.h(41): note: コンパイル対象の関数 テンプレート インスタンス化 '_Ty std::accumulate<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>,T,MathPlus::Distance::Distance::<lambda_8bab08fadfce21dc9cd4ae650a510f86>>(_InIt,_InIt,_Ty,_Fn2)' のリファレンスを確認してください
+          with
+          [
+              _Ty=int,
+              T=int,
+              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>,
+              _Fn2=MathPlus::Distance::Distance::<lambda_8bab08fadfce21dc9cd4ae650a510f86>
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(56): note: コンパイル対象の関数 テンプレート インスタンス化 'double MathPlus::Distance::Distance<int>(const std::vector<int,std::allocator<_Ty>> &,const std::vector<_Ty,std::allocator<_Ty>> &,const int &)' のリファレンスを確認してください
+          with
+          [
+              _Ty=int
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(29): note: クラス テンプレート のメンバー関数 'void QLTLClass<S,A,DataType>::QUpDate(const S &,const A &)' のコンパイル中
+          with
+          [
+              S=S,
+              A=A
+          ]
+c:\program files\microsoft visual studio 14.0\vc\include\xmemory(349): warning C4996: 'std::_Uninitialized_copy0': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files\microsoft visual studio 14.0\vc\include\xmemory(336): note: 'std::_Uninitialized_copy0' の宣言を確認してください
+  d:\documents\github\googlelib\sparsehash-c11-master\sparsehash\sparsetable(1031): note: コンパイル対象の関数 テンプレート インスタンス化 '_FwdIt std::uninitialized_copy<std::pair<const Key,T>,std::pair<const Key,T>>(_InIt,_InIt,_FwdIt)' のリファレンスを確認してください
+          with
+          [
+              _FwdIt=std::pair<const std::pair<S,A>,QLClass<S,A>::Q> ,
+              Key=std::pair<S,A>,
+              T=QLClass<S,A>::Q,
+              _InIt=std::pair<const std::pair<S,A>,QLClass<S,A>::Q> 
+          ]
+  d:\documents\github\googlelib\sparsehash-c11-master\sparsehash\sparsetable(1028): note: クラス テンプレート のメンバー関数 'google::sparsegroup<T,48,google::libc_allocator_with_realloc<T>>::sparsegroup(const google::sparsegroup<T,48,google::libc_allocator_with_realloc<T>> &)' のコンパイル中
+          with
+          [
+              T=std::pair<const std::pair<S,A>,QLClass<S,A>::Q>
+          ]
+  d:\documents\github\googlelib\sparsehash-c11-master\sparsehash\internal\libc_allocator_with_realloc.h(70): note: コンパイル対象の関数 テンプレート インスタンス化 'google::sparsegroup<T,48,google::libc_allocator_with_realloc<T>>::sparsegroup(const google::sparsegroup<T,48,google::libc_allocator_with_realloc<T>> &)' のリファレンスを確認してください
+          with
+          [
+              T=std::pair<const std::pair<S,A>,QLClass<S,A>::Q>
+          ]
+  d:\documents\github\googlelib\sparsehash-c11-master\sparsehash\sparsetable(552): note: コンパイル対象のクラス テンプレート インスタンス化 'google::sparsegroup<T,48,google::libc_allocator_with_realloc<T>>' のリファレンスを確認してください
+          with
+          [
+              T=std::pair<const std::pair<S,A>,QLClass<S,A>::Q>
+          ]
+  d:\documents\github\googlelib\sparsehash-c11-master\sparsehash\internal\sparsehashtable.h(213): note: コンパイル対象のクラス テンプレート インスタンス化 'google::two_d_iterator<std::vector<google::sparsegroup<T,48,google::libc_allocator_with_realloc<T>>,google::libc_allocator_with_realloc<_Newfirst>>>' のリファレンスを確認してください
+          with
+          [
+              T=std::pair<const std::pair<S,A>,QLClass<S,A>::Q>,
+              _Newfirst=google::sparsegroup<std::pair<const std::pair<S,A>,QLClass<S,A>::Q>,48,google::libc_allocator_with_realloc<std::pair<const std::pair<S,A>,QLClass<S,A>::Q>>>
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qlearning\qlclass.h(159): note: コンパイル対象のクラス テンプレート インスタンス化 'google::sparse_hashtable_iterator<Value,Key,HashFcn,ExtractKey,SetKey,EqualKey,Alloc>' のリファレンスを確認してください
+          with
+          [
+              Value=std::pair<const std::pair<S,A>,QLClass<S,A>::Q>,
+              Key=std::pair<S,A>,
+              HashFcn=std::hash<std::pair<S,A>>,
+              ExtractKey=google::sparse_hash_map<std::pair<S,A>,QLClass<S,A>::Q,std::hash<std::pair<S,A>>,QLClass<S,A>::eqstr,google::libc_allocator_with_realloc<std::pair<const std::pair<S,A>,QLClass<S,A>::Q>>>::SelectKey,
+              SetKey=google::sparse_hash_map<std::pair<S,A>,QLClass<S,A>::Q,std::hash<std::pair<S,A>>,QLClass<S,A>::eqstr,google::libc_allocator_with_realloc<std::pair<const std::pair<S,A>,QLClass<S,A>::Q>>>::SetKey,
+              EqualKey=QLClass<S,A>::eqstr,
+              Alloc=google::libc_allocator_with_realloc<std::pair<const std::pair<S,A>,QLClass<S,A>::Q>>
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qlearning\qlclass.h(158): note: クラス テンプレート のメンバー関数 'void QLClass<S,A>::Disp(void)' のコンパイル中
+          with
+          [
+              S=S,
+              A=A
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\main.cpp(121): note: コンパイル対象の関数 テンプレート インスタンス化 'void QLClass<S,A>::Disp(void)' のリファレンスを確認してください
+          with
+          [
+              S=S,
+              A=A
+          ]
+  d:\documents\github\machinelearning\reinforcementlearning\qlearning\qltl\qltlclass.h(16): note: コンパイル対象のクラス テンプレート インスタンス化 'QLClass<S,A>' のリファレンスを確認してください
+          with
+          [
+              S=S,
+              A=A
+          ]
+  QLTL.vcxproj -> D:\Documents\GitHub\MachineLearning\ReinforcementLearning\QLearning\Debug\QLTL.exe
