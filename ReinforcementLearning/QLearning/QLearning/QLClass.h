@@ -18,30 +18,67 @@
 #include<map>
 #include<utility>
 #include<Randomer.h>
-
-	using namespace std;
+#include<DataBase.h>
+#include"../../NearestNeighbor/LSH/LSH/LSH.h"
+#include<sparsehash/dense_hash_map>
+using namespace std;
 
 template<typename S,typename A>
-class QLClass :public Randomer,Filer
+class QLClass :public Randomer,DataBase<vector<S>>
 {
 public:
-	using SA = pair<S, A>;
+	using SA = std::pair<S, A>;
+	using Q = double;
+
+	using HashS = function<size_t(const S &s)>;
+	using HashA = function<size_t(const A &a)>;
+
+	struct eqstr
+	{
+		bool operator()(const SA &left, const SA &right) const
+		{
+			return left==right;
+		}
+	};
+
+	struct MyHash
+	{
+		size_t operator()(const SA &sa)const
+		{
+			return 0;
+		}
+	};
+
+	using QTable = google::dense_hash_map<SA, Q,hash<SA>, eqstr>;
+
 	using SAQ = pair<SA, double>;
 
-	using FuncR = std::function<double(const S &s)>;
+	using FuncR = std::function<Q(const S &s)>;
 	using FuncT = std::function<S(const S &s, const A &a)>;
 	using FuncAs = std::function<vector<A>(const S &s)>;
+	
+#ifdef UNICODE
 	using FuncLoad = std::function<vector<SAQ>(const vector<vector<string>>&)>;
-	using FuncWrite = function<vector<vector<string>>(const map<SA, double>&)>;
-private:
-	map<SA, double> q_table;
+	using FuncWrite = function<void(const QTable&,vector<vector<string>>*)>;
+#else
+	using FuncLoad = std::function<vector<SAQ>(const vector<vector<string>>&)>;
+	using FuncWrite = function<void>(const QTable&,vector<vector<string>>*)>;
+#endif // !UNICODE
+	
 
+
+protected:
+	QTable q_table;
+	
 	FuncT T;
 	FuncR R;
 	FuncAs As;
 
 	FuncLoad load;
 	FuncWrite write;
+
+	HashS hash_s;
+	HashA hash_a;
 
 	double learn_rate;
 	double r;
@@ -56,16 +93,6 @@ private:
 		return pos_a.front();
 	}
 
-	void QUpDate(const S &s, const A &a)
-	{
-		auto s2 = this->T(s, a);
-		auto a2 = BestAction(s2);
-		double maxE = q_table[make_pair(s2, a2)];
-
-		auto &q = this->q_table[make_pair(s, a)];
-		auto &q2 = this->q_table[make_pair(s2, a2)];
-		q = (1 - learn_rate)*q + this->learn_rate*(this->R(s2) + this->r*maxE);
-	}
 
 public:
 	QLClass()
@@ -73,10 +100,25 @@ public:
 	{}
 
 	QLClass(const double &lr, const double &r, const double &e)
-		:learn_rate(lr), r(r), e(e) {}
+		:learn_rate(lr), r(r), e(e) 
+	{
+		this->q_table.set_empty_key(SA());
+	}
 
 	~QLClass() {}
 
+	virtual void QUpDate(const S &s, const A &a)
+	{
+		auto s2 = this->T(s, a);
+		auto a2 = BestAction(s2);
+		auto r = this->R(s2);
+		double maxE = q_table[make_pair(s2, a2)];
+
+		auto &q = this->q_table[make_pair(s, a)];
+		
+		q = (1 - learn_rate)*q + this->learn_rate*( r + this->r*maxE);
+	}
+	
 	A Learn(const S &s)
 	{
 		uniform_real_distribution<> prop;
@@ -103,12 +145,20 @@ public:
 		A best_a = pos_a.front();
 		auto maxQ = this->q_table[make_pair(s, best_a)];
 
+		vector<SA> sas;
+		sas.reserve(size(pos_a));
+
 		for (auto &a : pos_a)
 		{
-			auto q = this->q_table[make_pair(s, a)];
+			sas.push_back(make_pair(s, a));
+		}
+
+		for (auto &sa : sas)
+		{
+			auto q = this->q_table[sa];
 			if (q > maxQ)
 			{
-				best_a = a;
+				best_a = sa.second;
 				maxQ = q;
 			}
 		}
@@ -129,6 +179,11 @@ public:
 		}
 	}
 
+	//FuncR = Q(const S &s);
+	//FuncT = S(const S &s, const A &a);
+	//FuncAs = vector<A>(const S &s);
+	//FuncLoad = vector<SAQ>(const vector<vector<string>>&);
+	//FuncWrite = vector<vector<string>>(const QTable&);
 	void SetFunc
 		(
 			const FuncR &func_r,
@@ -145,7 +200,7 @@ public:
 		this->write = func_write;
 	}
 
-	bool LoadFile(const string &file_name)
+	bool LoadFile(const string &file_name)override
 	{
 		auto data_list = this->PreLoad(file_name);
 
@@ -153,18 +208,33 @@ public:
 
 		for (auto &i : Qs)
 		{
+//			this->q_table.emplace_hint(begin(this->q_table), i.first, i.second);
 			this->q_table[i.first] = i.second;
 		}
 
 		return !data_list.empty();
 	}
 
-	bool WriteFile(const string &file_name)
+	bool WriteFile(const string &file_name)override
 	{
-		auto data_list = this->write(this->q_table);
+		vector<vector<string>> data_list;
+		this->write(this->q_table,&data_list);
 
 		this->PreWrite(file_name, data_list);
 
 		return true;
 	}
 };
+
+
+	// unordered_mapŽg‚¤‚½‚ß‚Ì•”•ª“ÁŽê‰»
+	template<typename S,typename A>
+	struct std::hash<std::pair<S,A>>
+	{
+		size_t operator()(const std::pair<S,A> &sa) const
+		{
+			const size_t idx = 19780211;
+			return std::hash<S>()(sa.first) + idx*std::hash<A>()(sa.second);
+		}
+	};
+

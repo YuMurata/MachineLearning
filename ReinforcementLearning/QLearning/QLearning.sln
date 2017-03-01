@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QLearning", "QLearning\QLearning.vcxproj", "{392343CF-A387-440F-BAF9-B592F6FC5471}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QLearning", "QLearning\QLearning.vcxproj", "{635DC790-5464-485C-B398-84CC0A659B3E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QLTL", "QLTL\QLTL.vcxproj", "{9DE51088-987B-455D-A1B5-B73E79F7F6C6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Randomer", "..\..\..\MyLib\LibraryMaker\RndomerLib\RndomerLib.vcxproj", "{76165DA6-922C-47E2-B8B0-BB75D4AD5719}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +17,30 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{392343CF-A387-440F-BAF9-B592F6FC5471}.Debug|x64.ActiveCfg = Debug|x64
-		{392343CF-A387-440F-BAF9-B592F6FC5471}.Debug|x64.Build.0 = Debug|x64
-		{392343CF-A387-440F-BAF9-B592F6FC5471}.Debug|x86.ActiveCfg = Debug|Win32
-		{392343CF-A387-440F-BAF9-B592F6FC5471}.Debug|x86.Build.0 = Debug|Win32
-		{392343CF-A387-440F-BAF9-B592F6FC5471}.Release|x64.ActiveCfg = Release|x64
-		{392343CF-A387-440F-BAF9-B592F6FC5471}.Release|x64.Build.0 = Release|x64
-		{392343CF-A387-440F-BAF9-B592F6FC5471}.Release|x86.ActiveCfg = Release|Win32
-		{392343CF-A387-440F-BAF9-B592F6FC5471}.Release|x86.Build.0 = Release|Win32
+		{635DC790-5464-485C-B398-84CC0A659B3E}.Debug|x64.ActiveCfg = Debug|x64
+		{635DC790-5464-485C-B398-84CC0A659B3E}.Debug|x64.Build.0 = Debug|x64
+		{635DC790-5464-485C-B398-84CC0A659B3E}.Debug|x86.ActiveCfg = Debug|Win32
+		{635DC790-5464-485C-B398-84CC0A659B3E}.Debug|x86.Build.0 = Debug|Win32
+		{635DC790-5464-485C-B398-84CC0A659B3E}.Release|x64.ActiveCfg = Release|x64
+		{635DC790-5464-485C-B398-84CC0A659B3E}.Release|x64.Build.0 = Release|x64
+		{635DC790-5464-485C-B398-84CC0A659B3E}.Release|x86.ActiveCfg = Release|Win32
+		{635DC790-5464-485C-B398-84CC0A659B3E}.Release|x86.Build.0 = Release|Win32
+		{9DE51088-987B-455D-A1B5-B73E79F7F6C6}.Debug|x64.ActiveCfg = Debug|x64
+		{9DE51088-987B-455D-A1B5-B73E79F7F6C6}.Debug|x64.Build.0 = Debug|x64
+		{9DE51088-987B-455D-A1B5-B73E79F7F6C6}.Debug|x86.ActiveCfg = Debug|Win32
+		{9DE51088-987B-455D-A1B5-B73E79F7F6C6}.Debug|x86.Build.0 = Debug|Win32
+		{9DE51088-987B-455D-A1B5-B73E79F7F6C6}.Release|x64.ActiveCfg = Release|x64
+		{9DE51088-987B-455D-A1B5-B73E79F7F6C6}.Release|x64.Build.0 = Release|x64
+		{9DE51088-987B-455D-A1B5-B73E79F7F6C6}.Release|x86.ActiveCfg = Release|Win32
+		{9DE51088-987B-455D-A1B5-B73E79F7F6C6}.Release|x86.Build.0 = Release|Win32
+		{76165DA6-922C-47E2-B8B0-BB75D4AD5719}.Debug|x64.ActiveCfg = Debug|x64
+		{76165DA6-922C-47E2-B8B0-BB75D4AD5719}.Debug|x64.Build.0 = Debug|x64
+		{76165DA6-922C-47E2-B8B0-BB75D4AD5719}.Debug|x86.ActiveCfg = Debug|Win32
+		{76165DA6-922C-47E2-B8B0-BB75D4AD5719}.Debug|x86.Build.0 = Debug|Win32
+		{76165DA6-922C-47E2-B8B0-BB75D4AD5719}.Release|x64.ActiveCfg = Release|x64
+		{76165DA6-922C-47E2-B8B0-BB75D4AD5719}.Release|x64.Build.0 = Release|x64
+		{76165DA6-922C-47E2-B8B0-BB75D4AD5719}.Release|x86.ActiveCfg = Release|Win32
+		{76165DA6-922C-47E2-B8B0-BB75D4AD5719}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
